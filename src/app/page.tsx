@@ -4,24 +4,14 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import type { Metadata } from 'next';
 
 import config from '@/config';
+import { getPinnedGithubRepos } from '@/server/actions';
 
 export const metadata: Metadata = {
 	title: `Home - ${config.personal.firstName} ${config.personal.lastName}`,
 };
 
-async function getPinnedRepos(): Promise<PinnedRepo[]> {
-	const response = await fetch(`${config.url}/api/pinned`);
-	let pinnedRepos: PinnedRepo[] = [];
-
-	try {
-		pinnedRepos = (await response.json()) as PinnedRepo[];
-	} catch (error) {}
-
-	return pinnedRepos;
-}
-
 export default async function Home() {
-	const pinnedRepos: PinnedRepo[] = await getPinnedRepos();
+	const pinnedRepos: PinnedRepo[] = await getPinnedGithubRepos();
 
 	return (
 		<main className="container">
@@ -40,9 +30,6 @@ export default async function Home() {
 					className="font-mono font-bold mt-12 text-4xl"
 				/>
 				<PinnedRepositories pinnedRepos={pinnedRepos} />
-				{config.url}
-				{`${config.url}/api/pinned`}
-				{JSON.stringify(pinnedRepos)}
 			</section>
 		</main>
 	);
