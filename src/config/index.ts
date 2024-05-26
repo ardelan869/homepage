@@ -18,12 +18,29 @@ interface Config {
 	};
 }
 
+const getURL = () => {
+	let url =
+		process?.env?.NEXT_PUBLIC_SITE_URL &&
+		process.env.NEXT_PUBLIC_SITE_URL.trim() !== ''
+			? process.env.NEXT_PUBLIC_SITE_URL
+			: // If not set, check for NEXT_PUBLIC_VERCEL_URL, which is automatically set by Vercel.
+			process?.env?.NEXT_PUBLIC_VERCEL_URL &&
+			  process.env.NEXT_PUBLIC_VERCEL_URL.trim() !== ''
+			? process.env.NEXT_PUBLIC_VERCEL_URL
+			: // If neither is set, default to localhost for local development.
+			  'http://localhost:3000/';
+
+	url = url.replace(/\/+$/, '');
+	url = url.includes('http') ? url : `https://${url}`;
+
+	return url;
+};
+
 const config: Config = {
-	url: process.env.BASE_URL ?? 'http://localhost:3000',
+	url: getURL(),
 	personal: {
 		firstName: 'Ardelan',
 		lastName: 'Yamanel',
-		quote: "Who will remember me when i'm gone ?",
 		skills: [
 			'/skills/html.png',
 			'/skills/css.png',
