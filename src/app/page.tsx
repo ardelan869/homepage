@@ -9,8 +9,6 @@ export const metadata: Metadata = {
 };
 
 async function getPinnedRepos(): Promise<PinnedRepo[]> {
-	console.warn(config.url);
-
 	const response = await fetch(`${config.url}/api/pinned`);
 	let pinnedRepos: PinnedRepo[] = [];
 
@@ -41,6 +39,7 @@ export default async function Home() {
 					className="font-mono font-bold mt-12 text-4xl"
 				/>
 				<PinnedRepositories pinnedRepos={pinnedRepos} />
+				{JSON.stringify(pinnedRepos)}
 			</section>
 		</main>
 	);
