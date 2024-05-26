@@ -1,3 +1,4 @@
+import 'server-only';
 import config from '@/config';
 
 const query = `{
@@ -32,10 +33,10 @@ const query = `{
   }
 }`;
 
-export async function GET() {
+export async function getPinnedGithubRepos(): Promise<PinnedRepo[]> {
 	try {
 		const response = await fetch('https://api.github.com/graphql', {
-			next: { revalidate: 60 },
+			next: { revalidate: 30 * 60 },
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -47,17 +48,20 @@ export async function GET() {
 		const responseBody = await response.text();
 
 		if (!response.ok) {
-			return Response.json([]);
+			console.error(responseBody);
+			return [];
 		}
 
 		try {
 			const { data } = JSON.parse(responseBody);
 
-			return Response.json(data.user.pinnedItems.nodes);
+			return data.user.pinnedItems.nodes;
 		} catch (error) {
-			return Response.json([]);
+			console.error(error);
+			return [];
 		}
 	} catch (error) {
-		return Response.json([]);
+		console.error(error);
+		return [];
 	}
 }
