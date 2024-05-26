@@ -45,12 +45,15 @@ export const metadata: Metadata = {
 		type: 'website',
 		url: config.url,
 		siteName: 'Home',
+		description: seo.description,
 	},
 	twitter: {
 		card: 'summary',
 		site: seo.twitter.username,
 		creator: seo.twitter.username,
+		description: seo.description,
 	},
+	description: seo.description,
 	creator: 'Ardelan Yamanel',
 };
 
