@@ -62,9 +62,9 @@ export default function PinnedRepository({
 			animate="enter"
 			exit="exit"
 		>
-			<Card className="sm:w-[400px] w-full">
-				<CardHeader>
-					<Link href={pinnedRepo.url} target="_blank">
+			<Link href={pinnedRepo.url} target="_blank">
+				<Card className="sm:w-[400px] w-full hover:bg-border transition-colors">
+					<CardHeader>
 						<div className="flex items-center gap-2">
 							<CardTitle className="font-mono font-bold text-lg">
 								{pinnedRepo.name}
@@ -85,34 +85,34 @@ export default function PinnedRepository({
 								{pinnedRepo.forks.totalCount}
 							</Badge>
 						</div>
-					</Link>
-					<CardDescription className="line-clamp-2">
-						{pinnedRepo.description}
-					</CardDescription>
-				</CardHeader>
-				<CardContent className="pb-2">
-					<Badge
-						variant="secondary"
-						className="text-white"
-						style={{
-							backgroundColor: `${
-								langColors[
-									pinnedRepo.primaryLanguage
-										.name as keyof typeof langColors
-								] ?? undefined
-							}`,
-						}}
-					>
-						<CodeXml size={15} color="#fff" className="mr-2" />
-						{pinnedRepo.primaryLanguage.name} (
-						{primaryLanguagePercentage
-							.toFixed(1)
-							.replace(/\.0$/, '')}
-						%)
-					</Badge>
-				</CardContent>
-				<Languages languages={pinnedRepo.languages} />
-			</Card>
+						<CardDescription className="line-clamp-2">
+							{pinnedRepo.description}
+						</CardDescription>
+					</CardHeader>
+					<CardContent className="pb-2">
+						<Badge
+							variant="secondary"
+							className="text-white"
+							style={{
+								backgroundColor: `${
+									langColors[
+										pinnedRepo.primaryLanguage
+											.name as keyof typeof langColors
+									] ?? undefined
+								}`,
+							}}
+						>
+							<CodeXml size={15} color="#fff" className="mr-2" />
+							{pinnedRepo.primaryLanguage.name} (
+							{primaryLanguagePercentage
+								.toFixed(1)
+								.replace(/\.0$/, '')}
+							%)
+						</Badge>
+					</CardContent>
+					<Languages languages={pinnedRepo.languages} />
+				</Card>
+			</Link>
 		</motion.div>
 	);
 }
