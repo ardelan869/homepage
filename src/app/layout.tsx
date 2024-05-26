@@ -14,6 +14,8 @@ import seo from '@/config/seo';
 import config from '@/config';
 import socials from '@/config/socials';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 const fullName = `${config.personal.firstName} ${config.personal.lastName}`;
 
 const generateKeyWords = () => {
@@ -69,6 +71,7 @@ export default function RootLayout({
 			<body
 				className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased w-full h-full`}
 			>
+				<SpeedInsights />
 				<TooltipProvider delayDuration={0}>
 					<ThemeProvider
 						attribute="class"
