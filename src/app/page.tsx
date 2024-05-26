@@ -1,11 +1,12 @@
-import config from '@/config';
 import TypeWriter from '@/components/TypeWriter';
 import PinnedRepositories from '@/components/home/pinned/Repositories';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import type { Metadata } from 'next';
 
+import config from '@/config';
+
 export const metadata: Metadata = {
-	title: 'Home',
+	title: `Home - ${config.personal.firstName} ${config.personal.lastName}`,
 };
 
 async function getPinnedRepos(): Promise<PinnedRepo[]> {
