@@ -40,6 +40,9 @@ export default async function Home() {
 					className="font-mono font-bold mt-12 text-4xl"
 				/>
 				<PinnedRepositories pinnedRepos={pinnedRepos} />
+				{config.url}
+				{`${config.url}/api/pinned`}
+				{JSON.stringify(pinnedRepos)}
 			</section>
 		</main>
 	);
