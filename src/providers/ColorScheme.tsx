@@ -17,10 +17,7 @@ const ColorSchemeContext = createContext<
 >(['system', () => {}]);
 
 export function ColorSchemeProvider({ children }: { children: ReactNode }) {
-	const [colorScheme, setColorScheme] = useState<ColorSchemes>(
-		(localStorage.getItem('colorscheme') as ColorSchemes | null) ??
-			'system',
-	);
+	const [colorScheme, setColorScheme] = useState<ColorSchemes>('system');
 	const [prefersDarkMode, setPrefersDarkMode] = useState(false);
 
 	const isDarkMode =
@@ -36,6 +33,11 @@ export function ColorSchemeProvider({ children }: { children: ReactNode }) {
 
 	useEffect(() => {
 		if (!window.matchMedia) return;
+
+		setColorScheme(
+			(localStorage?.getItem('colorscheme') as ColorSchemes | null) ??
+				'system',
+		);
 
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 

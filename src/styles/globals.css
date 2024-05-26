@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+	img {
+		user-select: none;
+		-webkit-user-drag: none;
+		-webkit-user-select: none;
+	}
+
 	:root {
+		--horizontal-scroll-duration: 5s;
+
 		--background: 0 0% 100%;
 		--foreground: 240 10% 3.9%;
 
@@ -63,6 +71,18 @@
 		--border: 240 3.7% 15.9%;
 		--input: 240 3.7% 15.9%;
 		--ring: 240 4.9% 83.9%;
+	}
+}
+
+@property --angle {
+	syntax: '<angle>';
+	initial-value: -90deg;
+	inherits: false;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 270deg;
 	}
 }
 

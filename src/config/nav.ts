@@ -1,15 +1,11 @@
 const navItems = [
 	{
-		label: 'Contact',
-		href: '/contact',
+		label: 'Home',
+		href: '/',
 	},
 	{
-		label: 'About',
+		label: 'About Me',
 		href: '/about',
-	},
-	{
-		label: 'Privacy',
-		href: '/privacy',
 	},
 ] as const;
 

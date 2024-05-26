@@ -17,6 +17,9 @@ const config = {
 			},
 		},
 		extend: {
+			screens: {
+				'lg-sm': '880px',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -66,10 +69,33 @@ const config = {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' },
 				},
+				blink: {
+					'0%, 100%': { opacity: '0' },
+					'50%': { opacity: '1' },
+				},
+				focus: {
+					from: { filter: 'blur(2px)' },
+					to: { filter: 'blur(0px)' },
+				},
+				ttb: {
+					from: { opacity: '0', transform: 'translateY(-5vh)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				horizontalScroll: {
+					to: { transform: 'translate(calc(-50% - 0.5rem))' },
+				},
+			},
+			stroke: {
+				current: 'var(--tw-stroke)',
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				blink: 'blink 1s ease infinite',
+				focus: 'focus 1s ease-out',
+				ttb: 'ttb 1s forwards',
+				horizontalScroll:
+					'horizontalScroll var(--horizontal-scroll-duration) linear infinite backwards',
 			},
 			fontFamily: {
 				sans: 'var(--font-geist-sans)',
