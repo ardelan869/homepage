@@ -36,7 +36,7 @@ const query = `{
 export async function getPinnedGithubRepos(): Promise<PinnedRepo[]> {
 	try {
 		const response = await fetch('https://api.github.com/graphql', {
-			next: { revalidate: 30 * 60 },
+			next: { revalidate: 5 * 60 },
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
