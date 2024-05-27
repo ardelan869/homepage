@@ -10,7 +10,7 @@ interface Config {
 					author: string;
 			  };
 		skills: string[];
-		qAndA: { question: string; answer: string }[];
+		qAndA: { question: string; answer: string | JSX.Element }[];
 	};
 	github: {
 		username: string;
@@ -62,15 +62,15 @@ const config: Config = {
 		qAndA: [
 			{
 				question: "What do you do when you're not programming?",
-				answer: 'In my free time, I enjoy cycling and chatting with friends. Additionally, I like watching informative videos and reading up on various topics. I am always striving to improve myself by exploring the source codes of different tools and programs, as well as watching YouTube videos related to programming and technology.',
+				answer: 'I enjoy cycling in my free time. I also try to keep educating myself by watching videos on various programming topics and learning new things.',
 			},
 			{
 				question: 'What fascinates you about web development?',
-				answer: 'What fascinates me about web development is the constantly evolving community. There is always something new to learn and explore. Additionally, the possibilities with just knowledge of HTML, CSS, and JavaScript are truly remarkable. With these foundational technologies, you can create dynamic and interactive web applications that reach a global audience.',
+				answer: "What fascinates me about web development are the many possibilities that you have with basic knowledge of HTML, CSS and JavaScript. You can now achieve a lot with JavaScript alone. The constantly evolving community is also great. It's amazing how many different frameworks and libraries there are now.",
 			},
 			{
-				question: 'Which values are particularly important to you?',
-				answer: 'My values revolve around honesty, even when it may be uncomfortable or challenging. I believe in being truthful and transparent in all interactions, as it fosters trust and respect. Additionally, I prioritize treating others with kindness and respect, fostering a supportive and inclusive environment. Justice is also crucial to me; I strive to ensure fairness and equality in all situations. <br/> <br/> Moreover, I value owning up to my mistakes and learning from them. Acknowledging errors and taking responsibility for them is essential for personal growth and integrity. Lastly, I adhere to the golden rule: treating others as I would like to be treated. This principle guides my actions and decisions, promoting empathy, understanding, and compassion in all aspects of life.',
+				question: 'What is the future of web development?',
+				answer: 'I believe that AIs will continue to develop many times over and adapt more and more libraries, websites and other applications. New technologies will open new doors. Developing applications will become easier and easier, and performance will continue to improve thanks to innovations such as the React compiler in React 19 or edge deployment.',
 			},
 		],
 	},

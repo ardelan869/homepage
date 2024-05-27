@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import HorizontalScroll from '@/components/HorizontalScroll';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
 	title: 'About',
@@ -47,14 +48,26 @@ export default function About() {
 						/>
 					))}
 				</HorizontalScroll>
-				{config.personal.qAndA.map((entry) => (
-					<div className="flex flex-col gap-1" key={entry.question}>
-						<h1 className="font-mono font-bold text-2xl text-center max-w-[800px] w-full">
+				{config.personal.qAndA.map((entry, index) => (
+					<div
+						className={cn(
+							'flex flex-col gap-1',
+							index === 0 && 'mt-2 lg-sm:mt-4',
+						)}
+						key={entry.question}
+					>
+						<h1 className="font-mono font-bold text-md lg-sm:text-2xl text-center max-w-[800px] w-full">
 							{entry.question}
 						</h1>
 						<article
-							className="text-foreground/50 max-w-[800px] p-2"
-							dangerouslySetInnerHTML={{ __html: entry.answer }}
+							className="text-foreground/50 max-w-[800px] p-2 text-center text-sm lg-sm:text-left lg-sm:text-md"
+							{...(typeof entry.answer === 'string'
+								? {
+										dangerouslySetInnerHTML: {
+											__html: entry.answer,
+										},
+								  }
+								: { children: entry.answer })}
 						/>
 					</div>
 				))}
