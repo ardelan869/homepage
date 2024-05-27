@@ -85,7 +85,7 @@ export default function PinnedRepository({
 								{pinnedRepo.forks.totalCount}
 							</Badge>
 						</div>
-						<CardDescription className="line-clamp-2">
+						<CardDescription className="line-clamp-2 h-10">
 							{pinnedRepo.description}
 						</CardDescription>
 					</CardHeader>
