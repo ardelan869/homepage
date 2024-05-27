@@ -11,7 +11,7 @@ export default function HorizontalScroll({
 } & React.HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div
-			className={cn('max-w-[500px] overflow-hidden', className)}
+			className={cn('max-w-[500px] overflow-hidden w-full', className)}
 			{...props}
 			style={{
 				mask: 'linear-gradient(90deg, transparent, white 30%, white 70%, transparent)',
