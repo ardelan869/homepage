@@ -10,18 +10,21 @@ export default function NavBar() {
 	const path = usePathname();
 
 	return (
-		<nav className="justify-self-center lg-sm:block hidden">
-			<ul className="flex items-center gap-8">
+		<nav className="justify-self-center">
+			<ul className="flex items-center justify-center gap-8">
 				{navItems.map((navItem) => (
 					<Link
 						key={navItem.href}
 						href={navItem.href}
+						className={cn(
+							path === navItem.href && 'lg-sm:block hidden',
+						)}
 					>
 						<li
 							className={cn(
 								'text-sm transition-colors',
 								path === navItem.href
-									? 'text-foreground'
+									? 'text-foreground lg-sm:block hidden'
 									: 'text-foreground/50 hover:text-foreground',
 							)}
 						>
