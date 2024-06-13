@@ -14,6 +14,7 @@ import seo from '@/config/seo';
 import config from '@/config';
 import socials from '@/config/socials';
 
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const fullName = `${config.personal.firstName} ${config.personal.lastName}`;
@@ -70,10 +71,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" role="main" suppressHydrationWarning>
 			<body
 				className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased w-full h-full`}
 			>
+				<Analytics />
 				<SpeedInsights />
 				<TooltipProvider delayDuration={0}>
 					<ThemeProvider
@@ -83,7 +85,11 @@ export default function RootLayout({
 						disableTransitionOnChange
 					>
 						{/* <ColorSchemeProvider> */}
-						<div className="w-full min-h-screen">
+						<div
+							role="main"
+							className="w-full min-h-screen"
+							tabIndex={-1}
+						>
 							<Header />
 							{children}
 						</div>
