@@ -43,6 +43,7 @@ export default function About() {
 						<img
 							key={skill}
 							src={skill}
+							aria-label={skill}
 							loading="lazy"
 							className="w-8 h-8 object-contain"
 						/>
