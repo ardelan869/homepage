@@ -62,7 +62,11 @@ export default function PinnedRepository({
 			animate="enter"
 			exit="exit"
 		>
-			<Link href={pinnedRepo.url} target="_blank">
+			<Link
+				href={pinnedRepo.url}
+				aria-label={pinnedRepo.name}
+				target="_blank"
+			>
 				<Card className="sm:w-[400px] w-full hover:bg-border transition-colors">
 					<CardHeader>
 						<div className="flex items-center gap-2">

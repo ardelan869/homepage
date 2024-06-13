@@ -17,7 +17,11 @@ export default function Footer() {
 	const socialEntries = Object.entries(socials);
 
 	return (
-		<footer className="border-t bg-primary-foreground">
+		<footer
+			role="footer"
+			className="border-t bg-primary-foreground"
+			tabIndex={-1}
+		>
 			<svg
 				width="200"
 				height="200"
@@ -62,6 +66,7 @@ export default function Footer() {
 						return (
 							<Link
 								key={platform}
+								aria-label={`${data.baseUrl}${data.username}`}
 								href={`${data.baseUrl}${data.username}`}
 								target="_blank"
 								className="group w-16 h-16 transition-colors rounded-full grid place-items-center hover:bg-foreground/15"

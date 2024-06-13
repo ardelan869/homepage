@@ -10,27 +10,23 @@ export default function NavBar() {
 	const path = usePathname();
 
 	return (
-		<nav className="justify-self-center">
+		<nav role="navigation" className="justify-self-center">
 			<ul className="flex items-center justify-center gap-8">
 				{navItems.map((navItem) => (
-					<Link
+					<li
 						key={navItem.href}
-						href={navItem.href}
 						className={cn(
+							'text-sm transition-colors',
+							path === navItem.href
+								? 'text-foreground lg-sm:block hidden'
+								: 'text-foreground/50 hover:text-foreground',
 							path === navItem.href && 'lg-sm:block hidden',
 						)}
 					>
-						<li
-							className={cn(
-								'text-sm transition-colors',
-								path === navItem.href
-									? 'text-foreground lg-sm:block hidden'
-									: 'text-foreground/50 hover:text-foreground',
-							)}
-						>
+						<Link href={navItem.href} aria-label={navItem.href}>
 							{navItem.label}
-						</li>
-					</Link>
+						</Link>
+					</li>
 				))}
 			</ul>
 		</nav>
