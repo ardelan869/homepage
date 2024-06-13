@@ -9,7 +9,7 @@ import ColorSchemeSwitcher from '@/components/ColorSchemeSwitcher';
 export default function Header() {
 	return (
 		<header
-			role="header"
+			role="banner"
 			className="sticky top-0 z-10 top animate-ttb backdrop-blur-xl bg-foreground/5 transition-colors"
 		>
 			<div className="container py-2 border-b grid grid-cols-3 grid-rows-1 items-center">

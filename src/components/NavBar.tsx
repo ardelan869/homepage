@@ -23,7 +23,7 @@ export default function NavBar() {
 							path === navItem.href && 'lg-sm:block hidden',
 						)}
 					>
-						<Link href={navItem.href} aria-label={navItem.href}>
+						<Link href={navItem.href} aria-label={navItem.label}>
 							{navItem.label}
 						</Link>
 					</li>

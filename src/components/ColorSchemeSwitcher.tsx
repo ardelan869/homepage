@@ -43,6 +43,7 @@ export default function ColorSchemeSwitcher({
 					onClick={() => setOpen((b) => !b)}
 					{...props}
 				>
+					<div className="sr-only">Color Scheme Switcher</div>
 					{/* {colorScheme === 'light' && <Sun />}
 					{colorScheme === 'dark' && <Moon />}
 					{colorScheme === 'system' && <MonitorSmartphone />} */}

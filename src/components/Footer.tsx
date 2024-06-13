@@ -18,7 +18,7 @@ export default function Footer() {
 
 	return (
 		<footer
-			role="footer"
+			role="contentinfo"
 			className="border-t bg-primary-foreground"
 			tabIndex={-1}
 		>

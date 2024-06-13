@@ -67,6 +67,7 @@ export default function PinnedRepository({
 				aria-label={pinnedRepo.name}
 				target="_blank"
 			>
+				<div className="sr-only">{pinnedRepo.name}</div>
 				<Card className="sm:w-[400px] w-full hover:bg-border transition-colors">
 					<CardHeader>
 						<div className="flex items-center gap-2">
