@@ -71,7 +71,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" role="html" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning>
 			<body
 				className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased w-full h-full`}
 			>
