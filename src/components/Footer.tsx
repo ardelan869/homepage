@@ -1,6 +1,5 @@
 import config from '@/config';
 import socials from '@/config/socials';
-import ColorSchemeSwitcher from '@/components/ColorSchemeSwitcher';
 import { Codepen, Github, Instagram, Mail, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -91,12 +90,11 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="h-12 bg-muted">
-				<div className="container h-full flex items-center justify-between">
+				<div className="container h-full flex items-center justify-center">
 					<h1>
 						&copy; {new Date().getFullYear()}{' '}
 						{config.personal.firstName} {config.personal.lastName}
 					</h1>
-					<ColorSchemeSwitcher className="hover:bg-muted-foreground/50" />
 				</div>
 			</div>
 		</footer>
