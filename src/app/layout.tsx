@@ -36,6 +36,10 @@ const generateKeyWords = () => {
 };
 
 export const metadata: Metadata = {
+	metadataBase: new URL(config.url),
+	alternates: {
+		canonical: '/',
+	},
 	title: {
 		template: `%s - ${fullName}`,
 		default: fullName,
