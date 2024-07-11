@@ -1,9 +1,10 @@
 import config from '@/config';
 import type { Metadata } from 'next';
 
-import HorizontalScroll from '@/components/HorizontalScroll';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
+
+import HorizontalScroll from '@/components/HorizontalScroll';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
 	title: 'About',
@@ -19,13 +20,14 @@ export default function About() {
 		<main className="container">
 			<section className="flex flex-col items-center mt-20 gap-10 px-5 pb-20">
 				<div className="rounded-full relative ring ring-offset-4 ring-offset-background ring-1 ring ring-muted-foreground">
-					<Avatar className="w-32 h-32 hover:scale-110 hover:cursor-pointer transition-transform">
-						<AvatarImage
-							src={`https://github.com/${config.github.username}.png`}
-							alt={config.github.username}
-						/>
-						<AvatarFallback children={config.github.username} />
-					</Avatar>
+					<Image
+						loading={'eager'}
+						width={128}
+						height={128}
+						className="w-32 h-32 hover:scale-110 hover:cursor-pointer transition-transform rounded-full"
+						src={`https://github.com/${config.github.username}.png`}
+						alt={config.github.username}
+					/>
 				</div>
 				{config.personal.quote !== undefined && (
 					<h3 className="text-muted-foreground/50 italic">

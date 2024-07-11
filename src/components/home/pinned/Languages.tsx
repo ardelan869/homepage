@@ -26,21 +26,25 @@ export default function Languages({
 
 						return (
 							<Tooltip key={language.node.name}>
-								<TooltipTrigger
-									className="h-full"
-									style={{
-										backgroundColor:
-											langColors[
-												language.node
-													.name as keyof typeof langColors
-											] ?? undefined,
-										width: `${percent}%`,
-									}}
-								>
-									<div className="sr-only">
-										{language.node.name} (
-										{percent.toFixed(1).replace(/\.0$/, '')}
-										%)
+								<TooltipTrigger asChild>
+									<div
+										className="h-full"
+										style={{
+											backgroundColor:
+												langColors[
+													language.node
+														.name as keyof typeof langColors
+												] ?? undefined,
+											width: `${percent}%`,
+										}}
+									>
+										<div className="sr-only">
+											{language.node.name} (
+											{percent
+												.toFixed(1)
+												.replace(/\.0$/, '')}
+											%)
+										</div>
 									</div>
 								</TooltipTrigger>
 								<TooltipContent>
