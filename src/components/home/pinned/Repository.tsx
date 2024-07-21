@@ -71,7 +71,7 @@ export default function PinnedRepository({
 				<Card className="sm:w-[400px] w-full hover:bg-border transition-colors">
 					<CardHeader>
 						<div className="flex items-center gap-2">
-							<CardTitle className="font-mono font-bold text-lg">
+							<CardTitle className="font-mono font-bold text-lg max-w-60 truncate">
 								{pinnedRepo.name}
 							</CardTitle>
 							<Badge className="flex items-center gap-1 py-[1.5px] px-2">
