@@ -76,7 +76,7 @@ const config: Config = {
 	},
 	github: {
 		username: 'ardelan869',
-		pinnedRepos: 4,
+		pinnedRepos: 6,
 	},
 };
 
