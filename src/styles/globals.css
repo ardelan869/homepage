@@ -2,100 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-	img {
-		user-select: none;
-		-webkit-user-drag: none;
-		-webkit-user-select: none;
-	}
-
-	:root {
-		--horizontal-scroll-duration: 5s;
-
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
-
-		--card: 0 0% 100%;
-		--card-foreground: 240 10% 3.9%;
-
-		--popover: 0 0% 100%;
-		--popover-foreground: 240 10% 3.9%;
-
-		--primary: 240 5.9% 10%;
-		--primary-foreground: 0 0% 98%;
-
-		--secondary: 240 4.8% 95.9%;
-		--secondary-foreground: 240 5.9% 10%;
-
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
-
-		--accent: 240 4.8% 95.9%;
-		--accent-foreground: 240 5.9% 10%;
-
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 0 0% 98%;
-
-		--border: 240 5.9% 90%;
-		--input: 240 5.9% 90%;
-		--ring: 240 10% 3.9%;
-
-		--radius: 0.5rem;
-	}
-
-	.dark {
-		--background: 240 10% 3.9%;
-		--foreground: 0 0% 98%;
-
-		--card: 240 10% 3.9%;
-		--card-foreground: 0 0% 98%;
-
-		--popover: 240 10% 3.9%;
-		--popover-foreground: 0 0% 98%;
-
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
-
-		--secondary: 240 3.7% 15.9%;
-		--secondary-foreground: 0 0% 98%;
-
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
-
-		--accent: 240 3.7% 15.9%;
-		--accent-foreground: 0 0% 98%;
-
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
-
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
-		--ring: 240 4.9% 83.9%;
-	}
-}
-
-@property --angle {
-	syntax: '<angle>';
-	initial-value: -90deg;
-	inherits: false;
-}
-
-@keyframes rotate {
-	to {
-		--angle: 270deg;
-	}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 
 @layer base {
-	* {
-		@apply border-border;
-	}
+  :root {
+    --background: 45 100% 98%;
+    --foreground: 50 100% 2%;
+    --card: 45 100% 98%;
+    --card-foreground: 50 100% 2%;
+    --popover: 45 100% 98%;
+    --popover-foreground: 50 100% 2%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 50 100% 2%;
+    --radius: 0.5rem;
+  }
 
-	body {
-		@apply bg-background text-foreground;
-	}
+  .dark {
+    --background: 50 100% 2%;
+    --foreground: 0 0% 98%;
+    --card: 50 100% 2%;
+    --card-foreground: 0 0% 98%;
+    --popover: 50 100% 2%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
 
-	::-webkit-scrollbar {
-		display: none;
-	}
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden;
+  }
 }

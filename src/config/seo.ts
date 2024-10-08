@@ -1,10 +1,3 @@
-const seo = {
-	twitter: {
-		username: 'ardelan869',
-	},
-	description: 'Personal Homepage for Ardelan Yamanel',
-	keywords: ['Homepage'],
-};
-
-export { seo };
-export default seo;
+export const SEO_DESCRIPTION =
+  'Homepage, displaying my activity, projects and more';
+export const SEO_TWITTER_HANDLE = 'ardelan869';
