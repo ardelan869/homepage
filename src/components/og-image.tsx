@@ -40,7 +40,9 @@ export default function OGImage({
           style={{
             fontSize: 36,
             fontWeight: 400,
-            color: '#f4f4f5'
+            color: '#f4f4f5',
+            textAlign: 'center',
+            width: '90%'
           }}
         >
           {description}
