@@ -66,11 +66,11 @@ export const metadata: Metadata = {
     locale: 'en_US'
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: `Homepage - ${FULL_NAME}`,
     description: SEO_DESCRIPTION,
     site: SEO_TWITTER_HANDLE,
-    creator: 'ardelan869'
+    creator: 'ardelan869',
   },
   description: SEO_DESCRIPTION,
   creator: 'Ardelan Yamanel'
