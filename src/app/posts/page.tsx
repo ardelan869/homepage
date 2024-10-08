@@ -43,8 +43,9 @@ export default async function Posts() {
           post.visible && (
             <Link
               key={post.slug}
-              className="group flex h-20 items-center justify-between border-b px-3 text-muted-foreground transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:text-muted"
+              aria-label={post.title}
               href={`/posts/${post.slug}`}
+              className="group flex h-20 items-center justify-between border-b px-3 text-muted-foreground transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:text-muted"
             >
               <Post post={post} />
             </Link>

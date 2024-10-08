@@ -26,6 +26,7 @@ export default function Header() {
         <section className="flex items-center gap-5">
           <Link
             className="relative"
+            aria-label="Github Profile"
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -34,8 +35,8 @@ export default function Header() {
               className="h-16 w-16 rounded-full"
               src={GITHUB_AVATAR_URL}
               alt={FULL_NAME}
-              width={1024}
-              height={1024}
+              width={256}
+              height={256}
             />
             <span
               className="absolute bottom-[5px] right-[5px] h-2 w-2 rounded-full"
@@ -45,7 +46,7 @@ export default function Header() {
               }}
             />
           </Link>
-          <Link href="/">
+          <Link aria-label="Home" href="/">
             <article>
               <h1 className="text-2xl font-medium">{FULL_NAME}</h1>
               <h2 className="text-base text-muted-foreground">{DESCRIPTION}</h2>
@@ -56,11 +57,12 @@ export default function Header() {
           {LINKS.map((link) => (
             <Link
               key={link.name}
+              aria-label={link.name}
+              href={link.href}
               className={cn(
                 'text-sm text-muted-foreground',
                 path === link.href ? 'text-foreground' : 'hover:underline'
               )}
-              href={link.href}
             >
               {link.name}
             </Link>

@@ -2,19 +2,27 @@ import { CodepenIcon, GithubIcon, InstagramIcon, Mail } from 'lucide-react';
 
 export const SOCIALS = [
   {
-    href: 'https://codepen.io/ardelan869',
+    url: 'https://codepen.io/',
+    handle: 'ardelan869',
+    name: 'Codepen',
     icon: CodepenIcon
   },
   {
-    href: 'https://github.com/ardelan869',
+    url: 'https://github.com/',
+    handle: 'ardelan869',
+    name: 'Github',
     icon: GithubIcon
   },
   {
-    href: 'https://instagram.com/ardelan869',
+    url: 'https://instagram.com/',
+    handle: 'ardelan869',
+    name: 'Instagram',
     icon: InstagramIcon
   },
   {
-    href: 'mailto:ardelanyamanel@outlook.de',
+    url: 'mailto:',
+    handle: 'ardelanyamanel@outlook.de',
+    name: 'Mail',
     icon: Mail
   }
 ];

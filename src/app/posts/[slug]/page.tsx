@@ -76,8 +76,9 @@ export default async function Post({
       {/* TODO: maybe make sticky 'sticky top-10 z-50' ??? need an idea for a background tho ... */}
       <section className="mb-6 mt-10 flex items-center gap-2">
         <Link
-          className="text-sm transition-colors hover:text-muted-foreground"
+          aria-label="Posts"
           href="/posts"
+          className="text-sm transition-colors hover:text-muted-foreground"
         >
           Go Back
         </Link>

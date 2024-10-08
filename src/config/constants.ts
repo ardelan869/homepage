@@ -33,8 +33,6 @@ function getAge(year: number, month: number, date: number) {
   let age = today.getFullYear() - birth.getFullYear();
   const monthDiff = today.getMonth() - birth.getMonth();
 
-  // Wenn der Geburtsmonat noch nicht erreicht wurde oder
-  // wenn der Geburtsmonat gleich ist, aber der Tag noch nicht erreicht wurde
   if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
     age--;
   }

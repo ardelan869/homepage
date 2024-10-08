@@ -41,6 +41,7 @@ export default function Listening({
       {...props}
     >
       <Link
+        aria-label={`Spotify Track (${playback?.track_name ?? status?.spotify?.song})`}
         href={
           playback?.track_link ??
           (status &&

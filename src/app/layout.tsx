@@ -2,8 +2,19 @@ import '@/styles/globals.css';
 
 import type { Metadata, Viewport } from 'next';
 
-import { FULL_NAME, SITE_URL } from '@/config/constants';
-import { SEO_DESCRIPTION, SEO_TWITTER_HANDLE } from '@/config/seo';
+import {
+  FIRST_NAME,
+  FULL_NAME,
+  GITHUB_NAME,
+  LAST_NAME,
+  SITE_URL
+} from '@/config/constants';
+import {
+  SEO_DESCRIPTION,
+  SEO_KEYWORDS,
+  SEO_TWITTER_HANDLE
+} from '@/config/seo';
+import { SOCIALS } from '@/config/socials';
 
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -18,6 +29,24 @@ import LanyardProvider from '@/components/lanyard';
 import Header from './(components)/header';
 import Footer from './(components)/footer';
 
+function generateKeyWords(): string[] {
+  const keywords = SEO_KEYWORDS;
+
+  keywords.push(
+    FULL_NAME,
+    FIRST_NAME,
+    LAST_NAME,
+    GITHUB_NAME,
+    SEO_TWITTER_HANDLE
+  );
+
+  for (const social of SOCIALS) {
+    keywords.push(`${social.name} ${social.handle}`, social.handle);
+  }
+
+  return keywords;
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   alternates: {
@@ -27,7 +56,7 @@ export const metadata: Metadata = {
     template: `%s - ${FULL_NAME}`,
     default: FULL_NAME
   },
-  keywords: [],
+  keywords: generateKeyWords(),
   openGraph: {
     type: 'profile',
     title: `${FULL_NAME} | Homepage`,

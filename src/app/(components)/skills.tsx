@@ -9,6 +9,7 @@ export default function Skills() {
       {SKILLS.map(({ icon: Icon, label, href }) => (
         <Link
           key={label}
+          aria-label={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"

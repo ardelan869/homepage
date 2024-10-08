@@ -11,13 +11,14 @@ export default function Repository({
 }: React.AnchorHTMLAttributes<HTMLAnchorElement> & { repo: Repository }) {
   return (
     <Link
+      aria-label={`Repository ${repo.name}`}
+      href={repo.html_url}
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(
         'group flex h-20 items-center justify-between border-b px-3 text-muted-foreground transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:text-muted',
         className
       )}
-      href={repo.html_url}
-      target="_blank"
-      rel="noopener noreferrer"
       {...props}
     >
       <article className="flex flex-col items-start justify-center">

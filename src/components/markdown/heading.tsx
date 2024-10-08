@@ -18,7 +18,11 @@ export default function Heading({
   ) => JSX.Element;
 }) {
   return (
-    <Link href={`#${props.id}`} className="!no-underline">
+    <Link
+      aria-label={typeof children === 'string' ? children : props.id}
+      href={`#${props.id}`}
+      className="!no-underline"
+    >
       <Component
         className={cn(
           'group flex items-center font-semibold hover:cursor-pointer',
