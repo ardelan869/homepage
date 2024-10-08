@@ -42,7 +42,6 @@ export async function generateMetadata({
   return {
     title: post.title,
     openGraph: {
-      type: 'article',
       url: `${SITE_URL}/posts/${params.slug}`,
       siteName: 'Posts',
       title: post.title,
