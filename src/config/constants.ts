@@ -1,21 +1,22 @@
 import type { LanyardData } from 'react-use-lanyard';
 
-export const SITE_URL = (() => {
-  let url =
-    process?.env?.NEXT_PUBLIC_SITE_URL &&
-    process.env.NEXT_PUBLIC_SITE_URL.trim() !== ''
-      ? process.env.NEXT_PUBLIC_SITE_URL
-      : // If not set, check for NEXT_PUBLIC_VERCEL_URL, which is automatically set by Vercel.
-        process?.env?.NEXT_PUBLIC_VERCEL_URL &&
-          process.env.NEXT_PUBLIC_VERCEL_URL.trim() !== ''
-        ? process.env.NEXT_PUBLIC_VERCEL_URL
-        : // If neither is set, default to localhost for local development.
-          'http://localhost:3000/';
+// export const SITE_URL = (() => {
+//   let url =
+//     process?.env?.NEXT_PUBLIC_SITE_URL &&
+//     process.env.NEXT_PUBLIC_SITE_URL.trim() !== ''
+//       ? process.env.NEXT_PUBLIC_SITE_URL
+//       : // If not set, check for NEXT_PUBLIC_VERCEL_URL, which is automatically set by Vercel.
+//         process?.env?.NEXT_PUBLIC_VERCEL_URL &&
+//           process.env.NEXT_PUBLIC_VERCEL_URL.trim() !== ''
+//         ? process.env.NEXT_PUBLIC_VERCEL_URL
+//         : // If neither is set, default to localhost for local development.
+//           'http://localhost:3000/';
 
-  url = url.replace(/\/+$/, '');
+//   url = url.replace(/\/+$/, '');
 
-  return url.includes('http') ? url : `https://${url}`;
-})();
+//   return url.includes('http') ? url : `https://${url}`;
+// })();
+export const SITE_URL = 'https://ardelanyamanel.com';
 
 export const FIRST_NAME = 'Ardelan';
 export const LAST_NAME = 'Yamanel';
