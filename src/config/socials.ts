@@ -1,34 +1,20 @@
-const socials: Record<
-	string,
-	{
-		username: string;
-		baseUrl: `https://${string}/` | 'mailto:';
-		hover?: string;
-	}
-> = {
-	codepen: {
-		baseUrl: 'https://codepen.io/',
-		username: 'ardelan869',
-	},
-	twitter: {
-		baseUrl: 'https://x.com/',
-		username: 'ardelan869',
-		hover: '#049aeb',
-	},
-	instagram: {
-		baseUrl: 'https://instagram.com/',
-		username: 'ardelan869',
-		hover: 'url(#instagram)',
-	},
-	github: {
-		baseUrl: 'https://github.com/',
-		username: 'ardelan869',
-	},
-	mail: {
-		baseUrl: 'mailto:',
-		username: 'ardelanyamanel@outlook.de',
-	},
-} as const;
+import { CodepenIcon, GithubIcon, InstagramIcon, Mail } from 'lucide-react';
 
-export { socials };
-export default socials;
+export const SOCIALS = [
+  {
+    href: 'https://codepen.io/ardelan869',
+    icon: CodepenIcon
+  },
+  {
+    href: 'https://github.com/ardelan869',
+    icon: GithubIcon
+  },
+  {
+    href: 'https://instagram.com/ardelan869',
+    icon: InstagramIcon
+  },
+  {
+    href: 'mailto:ardelanyamanel@outlook.de',
+    icon: Mail
+  }
+];

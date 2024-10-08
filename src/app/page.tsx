@@ -1,37 +1,24 @@
-import config from '@/config';
-import { getPinnedGithubRepos } from '@/server/actions';
-import type { Metadata } from 'next';
+import { ABOUT } from '@/config/constants';
 
-import TypeWriter from '@/components/TypeWriter';
-import PinnedRepositories from '@/components/home/pinned/Repositories';
-import Image from 'next/image';
+import Transition from '@/components/transition';
+import Listening from './(components)/listening';
+import Activity from './(components)/activity';
+import Skills from './(components)/skills';
 
-export const metadata: Metadata = {
-	title: `Home - ${config.personal.firstName} ${config.personal.lastName}`,
-};
+export default function Home() {
+  return (
+    <Transition className="flex flex-col gap-6 overflow-y-scroll pt-6">
+      <section className="flex items-center justify-between">
+        <Listening />
+        <Activity />
+      </section>
 
-export default async function Home() {
-	const pinnedRepos: PinnedRepo[] = await getPinnedGithubRepos();
+      <section className="flex flex-col justify-start gap-1">
+        <h1 className="text-xl">My Skills</h1>
+        <Skills />
+      </section>
 
-	return (
-		<main className="container">
-			<section className="w-full flex flex-col items-center mt-20">
-				<div className="rounded-full relative ring ring-offset-4 ring-offset-background ring-1 ring ring-muted-foreground">
-					<Image
-						loading={'eager'}
-						width={128}
-						height={128}
-						className="w-32 h-32 hover:scale-110 hover:cursor-pointer transition-transform rounded-full"
-						src={`https://github.com/${config.github.username}.png`}
-						alt={config.github.username}
-					/>
-				</div>
-				<TypeWriter
-					texts={[`Hi, I'm ${config.personal.firstName}.`]}
-					className="font-mono font-bold mt-12 text-4xl"
-				/>
-				<PinnedRepositories pinnedRepos={pinnedRepos} />
-			</section>
-		</main>
-	);
+      <article className="text-center text-muted-foreground">{ABOUT}</article>
+    </Transition>
+  );
 }
