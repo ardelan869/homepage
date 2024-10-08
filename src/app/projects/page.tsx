@@ -1,7 +1,7 @@
 'use server';
 
 import type { Metadata } from 'next';
-import { GITHUB_NAME, SITE_URL } from '@/config/constants';
+import { FULL_NAME, GITHUB_NAME, SITE_URL } from '@/config/constants';
 
 import getRepositories from '@/server/actions/github';
 
@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'website',
       url: `${SITE_URL}/projects`,
-      siteName: 'Projects'
+      siteName: `Projects - ${FULL_NAME}`
     }
   };
 }

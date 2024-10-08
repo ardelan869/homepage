@@ -1,7 +1,7 @@
 'use server';
 
 import type { Metadata } from 'next';
-import { SITE_URL } from '@/config/constants';
+import { FULL_NAME, SITE_URL } from '@/config/constants';
 
 import postsTable from '@/db/schema/posts';
 import db from '@/db';
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: 'website',
       url: `${SITE_URL}/posts`,
-      siteName: 'Posts'
+      siteName: `Posts - ${FULL_NAME}`
     }
   };
 }

@@ -1,7 +1,7 @@
 'use server';
 
 import type { Metadata } from 'next';
-import { SITE_URL } from '@/config/constants';
+import { FULL_NAME, SITE_URL } from '@/config/constants';
 
 import db from '@/db';
 import postsTable, { type Post } from '@/db/schema/posts';
@@ -44,7 +44,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'article',
       url: `${SITE_URL}/posts/${params.slug}`,
-      siteName: 'Posts',
+      siteName: `${post.title} - ${FULL_NAME}`,
       title: post.title,
       description: post.description
     }

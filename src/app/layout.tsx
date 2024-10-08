@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   keywords: generateKeyWords(),
   openGraph: {
     type: 'profile',
-    title: `${FULL_NAME} | Homepage`,
+    title: `Homepage - ${FULL_NAME}`,
     description: SEO_DESCRIPTION,
     url: SITE_URL,
     siteName: FULL_NAME,
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: `${FULL_NAME} | Homepage`,
+    title: `Homepage - ${FULL_NAME}`,
     description: SEO_DESCRIPTION,
     site: SEO_TWITTER_HANDLE,
     creator: 'ardelan869'
