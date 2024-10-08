@@ -15,17 +15,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Trash } from 'lucide-react';
 
-export default function Editor(previous: {
-  slug?: string;
-  title?: string;
-  description?: string;
-  content?: string;
-}) {
-  const [slug, setSlug] = useState(previous?.slug ?? '');
+export default function Editor() {
+  const [slug, setSlug] = useState('');
   const [debouncedSlug] = useDebounce(slug, 500);
-  const [title, setTitle] = useState(previous?.title ?? '');
-  const [description, setDescription] = useState(previous?.description ?? '');
-  const [content, setContent] = useState(previous?.content ?? '');
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [content, setContent] = useState('');
   const [secret, setSecret] = useState('');
   const [loading, setLoading] = useState(false);
   const [deleting, setDeleting] = useState(false);

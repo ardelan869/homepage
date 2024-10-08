@@ -27,7 +27,7 @@ export async function deletePost(
 }
 
 export async function createOrEditPost(
-  post: Omit<Omit<Post, 'visible'>, 'created_at'>,
+  post: Omit<Omit<Omit<Post, 'visible'>, 'created_at'>, 'updated_at'>,
   secret: string
 ): Promise<{ message: string } | undefined> {
   if (secret !== process.env.POST_ADMIN_SECRET) {
