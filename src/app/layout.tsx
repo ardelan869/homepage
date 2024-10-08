@@ -58,6 +58,7 @@ export const metadata: Metadata = {
   },
   keywords: generateKeyWords(),
   openGraph: {
+    type: 'profile',
     title: `${FULL_NAME} | Homepage`,
     description: SEO_DESCRIPTION,
     url: SITE_URL,
