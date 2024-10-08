@@ -6,14 +6,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1
     },
     {
-      url: `${SITE_URL}/about`,
+      url: `${SITE_URL}/projects`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1
+      changeFrequency: 'daily'
+    },
+    {
+      url: `${SITE_URL}/posts`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly'
+    },
+    {
+      url: `${SITE_URL}/editor`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly'
     }
   ];
 }
