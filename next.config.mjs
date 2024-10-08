@@ -11,9 +11,10 @@ const nextConfig = {
       hmrRefreshes: true
     }
   },
-  experimental: {
-    reactCompiler: true
-  },
+  // Vercel deployment will just fail, because it can't find `babel-plugin-react-compiler`, although the install was logged ????
+  // experimental: {
+  //   reactCompiler: true
+  // },
   images: {
     remotePatterns: [
       {
