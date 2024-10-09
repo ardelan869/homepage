@@ -63,7 +63,7 @@ export const SKILLS = [
   {
     label: 'Solid.js',
     icon: SolidjsOriginal,
-    href: 'https://solidjs.org'
+    href: 'https://solidjs.com'
   },
   {
     label: 'Astro',
