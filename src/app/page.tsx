@@ -4,6 +4,7 @@ import Transition from '@/components/transition';
 import Listening from './(components)/listening';
 import Activity from './(components)/activity';
 import Skills from './(components)/skills';
+import MDXBody from '@/components/mdx-body';
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
         <Skills />
       </section>
 
-      <article className="text-center text-muted-foreground">{ABOUT}</article>
+      <article className="text-center text-muted-foreground">
+        <MDXBody>{ABOUT}</MDXBody>
+      </article>
     </Transition>
   );
 }
