@@ -7,6 +7,7 @@ import H4 from '@/components/markdown/h4';
 import H5 from '@/components/markdown/h5';
 import H6 from '@/components/markdown/h6';
 import Pre from '@/components/markdown/pre';
+import A from '@/components/markdown/a';
 
 export const MDXComponents: MDXComponentsType = {
   h1: H1,
@@ -15,7 +16,8 @@ export const MDXComponents: MDXComponentsType = {
   h4: H4,
   h5: H5,
   h6: H6,
-  pre: Pre
+  pre: Pre,
+  a: A
 };
 
 export default MDXComponents;

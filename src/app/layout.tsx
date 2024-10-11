@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: `Homepage - ${FULL_NAME}`,
     description: SEO_DESCRIPTION,
     site: SEO_TWITTER_HANDLE,
-    creator: 'ardelan869',
+    creator: 'ardelan869'
   },
   description: SEO_DESCRIPTION,
   creator: 'Ardelan Yamanel'

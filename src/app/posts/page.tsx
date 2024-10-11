@@ -7,7 +7,7 @@ import postsTable from '@/db/schema/posts';
 import db from '@/db';
 
 import Transition from '@/components/transition';
-import Post from '@/components/post';
+import Post from './(components)/post';
 import Link from 'next/link';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -38,19 +38,21 @@ export default async function Posts() {
           <h1 className="text-center text-2xl">No Posts found :&#40;</h1>
         </section>
       )}
-      {posts.map(
-        (post) =>
-          post.visible && (
-            <Link
-              key={post.slug}
-              aria-label={post.title}
-              href={`/posts/${post.slug}`}
-              className="group flex h-20 items-center justify-between border-b px-3 text-muted-foreground transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:text-muted"
-            >
-              <Post post={post} />
-            </Link>
-          )
-      )}
+      <div className="flex w-full flex-col">
+        {posts.map(
+          (post) =>
+            post.visible && (
+              <Link
+                key={post.slug}
+                aria-label={post.title}
+                href={`/posts/${post.slug}`}
+                className="relative flex h-20 w-full border-b px-3 text-muted-foreground transition-colors duration-300 hover:cursor-pointer hover:bg-foreground hover:text-muted"
+              >
+                <Post post={post} />
+              </Link>
+            )
+        )}
+      </div>
     </Transition>
   );
 }

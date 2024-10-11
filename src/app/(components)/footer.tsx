@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
           ))}
         </section>
-        <span className="absolute bottom-2 right-0 text-right text-sm">
+        <span className="absolute bottom-2 right-2 text-right text-xs">
           &copy; {new Date().getFullYear()} Ardelan Yamanel
         </span>
       </footer>

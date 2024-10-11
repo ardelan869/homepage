@@ -72,9 +72,9 @@ export default async function Post({
   if (!post || !post.visible) return notFound();
 
   return (
-    <Transition className="pb-4 font-sans">
+    <Transition className="p-4 font-sans">
       {/* TODO: maybe make sticky 'sticky top-10 z-50' ??? need an idea for a background tho ... */}
-      <section className="mb-6 mt-10 flex items-center gap-2">
+      <section className="mb-6 mt-2 flex items-center gap-2">
         <Link
           aria-label="Posts"
           href="/posts"
@@ -87,9 +87,7 @@ export default async function Post({
           {new Date(Date.parse(post.created_at)).toLocaleDateString()}
         </h3>
       </section>
-      <div className="prose dark:prose-invert">
-        <MDXBody>{post.content}</MDXBody>
-      </div>
+      <MDXBody>{post.content}</MDXBody>
     </Transition>
   );
 }

@@ -19,6 +19,9 @@ const config = {
         '2xl': '1400px'
       }
     },
+    screens: {
+      xs: '510px'
+    },
     extend: {
       fontFamily: {
         sans: ['Geist', 'sans-serif'],

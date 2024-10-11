@@ -8,7 +8,7 @@ import MDXBody from '@/components/mdx-body';
 
 export default function Home() {
   return (
-    <Transition className="flex flex-col gap-6 overflow-y-scroll pt-6">
+    <Transition className="flex flex-col gap-6 overflow-y-scroll px-4 pt-6">
       <section className="flex items-center justify-between">
         <Listening />
         <Activity />
