@@ -29,7 +29,7 @@ export default async function MDXBody({
             remarkPlugins: [remarkGfm, remarkA11yEmoji],
             rehypePlugins: [
               rehypeSlug,
-              rehypePrettyCode.bind(null, { theme: 'github-dark-default' })
+              [rehypePrettyCode, { theme: 'github-dark-default' }]
             ]
           }
         }}
