@@ -151,7 +151,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <LanyardProvider>
-            <div className="z-0 m-auto flex h-screen max-w-2xl flex-col">
+            <div className="z-0 m-auto flex max-w-2xl flex-col h-dvh">
               <Header />
               {children}
               <Footer />
