@@ -11,7 +11,7 @@ export default function Post({
   return (
     <article
       className={cn(
-        'relative flex h-full w-full flex-col justify-center',
+        'relative flex h-full w-full flex-col justify-center group',
         className
       )}
       {...props}
