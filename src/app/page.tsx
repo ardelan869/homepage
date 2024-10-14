@@ -19,9 +19,7 @@ export default function Home() {
         <Skills />
       </section>
 
-      <article className="text-center text-muted-foreground">
-        <MDXBody>{ABOUT}</MDXBody>
-      </article>
+      <MDXBody className="text-center self-center text-muted-foreground">{ABOUT}</MDXBody>
     </Transition>
   );
 }
