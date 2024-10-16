@@ -57,9 +57,11 @@ export default function Activity({
   useEffect(() => {
     if (!status) return;
 
-    setActivity(
-      status.activities.find((activity) => activity.name !== 'Spotify')
+    const filtered = status.activities.filter(
+      (activity) => activity.type === 0
     );
+
+    setActivity(filtered.find((activity) => activity.assets) ?? filtered[0]);
   }, [status]);
 
   if (!activity && loading) return <Skeleton align="right" />;
