@@ -20,7 +20,6 @@ export default function OGImage({
     (
       <div
         style={{
-          fontSize: 112,
           backgroundImage: `url(${SITE_URL}/assets/images/texture_${randomTexture}.png)`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
@@ -35,18 +34,34 @@ export default function OGImage({
           fontWeight: 600
         }}
       >
-        {title}
-        <div
+        <h1
           style={{
-            fontSize: 36,
-            fontWeight: 400,
-            color: '#f4f4f5',
+            maxWidth: '100%',
             textAlign: 'center',
-            width: '90%'
+            fontSize: 112,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            padding: '0 5%'
           }}
         >
-          {description}
-        </div>
+          {title}
+        </h1>
+        {description && (
+          <h2
+            style={{
+              maxWidth: '100%',
+              textAlign: 'center',
+              fontSize: 36,
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+              padding: '0 10%'
+            }}
+          >
+            {description}
+          </h2>
+        )}
       </div>
     ),
     {
