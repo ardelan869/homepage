@@ -1,21 +1,5 @@
 import type { LanyardData } from 'react-use-lanyard';
 
-// export const SITE_URL = (() => {
-//   let url =
-//     process?.env?.NEXT_PUBLIC_SITE_URL &&
-//     process.env.NEXT_PUBLIC_SITE_URL.trim() !== ''
-//       ? process.env.NEXT_PUBLIC_SITE_URL
-//       : // If not set, check for NEXT_PUBLIC_VERCEL_URL, which is automatically set by Vercel.
-//         process?.env?.NEXT_PUBLIC_VERCEL_URL &&
-//           process.env.NEXT_PUBLIC_VERCEL_URL.trim() !== ''
-//         ? process.env.NEXT_PUBLIC_VERCEL_URL
-//         : // If neither is set, default to localhost for local development.
-//           'http://localhost:3000/';
-
-//   url = url.replace(/\/+$/, '');
-
-//   return url.includes('http') ? url : `https://${url}`;
-// })();
 export const SITE_URL = 'https://ardelanyamanel.com';
 
 export const FIRST_NAME = 'Ardelan';
@@ -40,7 +24,7 @@ function getAge(year: number, month: number, date: number) {
   return age;
 }
 
-export const ABOUT = `Hi, I'm Ardelan Yamanel, an ${getAge(2006, 2, 23)}-year-old developer from Berlin. I've been coding for almost 3 years, and I'm particularly passionate about web development. I'm always eager to learn new programming languages and expand my skill set. When I'm not coding, you'll find me cycling around the city or working out at the gym.`;
+export const ABOUT = `Hi, I'm Ardelan Yamanel, an ${getAge(2006, 2, 23)}-year-old developer from Berlin. I've been coding for almost 3 years, with a strong focus on web development. I’m always keen to explore new programming languages and enhance my skills. When I'm not coding, I enjoy cycling around the city or working out at the gym.`;
 
 export const GITHUB_NAME = 'ardelan869';
 export const GITHUB_URL = `https://github.com/${GITHUB_NAME}`;
