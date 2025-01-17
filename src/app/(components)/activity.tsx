@@ -70,7 +70,7 @@ export default function Activity({
     activity && (
       <section
         className={cn(
-          'flex flex-1 items-center justify-end gap-4 xs:flex-row-reverse',
+          'flex flex-1 items-center justify-end gap-4 xs:flex-row-reverse xs:justify-start',
           className
         )}
         {...props}
