@@ -69,13 +69,12 @@ export default function Activity({
   return (
     activity && (
       <section
-        className={cn('flex flex-1 items-center justify-end gap-4', className)}
+        className={cn(
+          'flex flex-1 items-center justify-end gap-4 xs:flex-row-reverse',
+          className
+        )}
         {...props}
       >
-        <article className="text-right">
-          <h1 className="max-w-full truncate text-lg">{activity?.name}</h1>
-          <h2 className="text-sm text-muted-foreground">{elapsedTime}</h2>
-        </article>
         {image && (
           <Image
             className="h-16 w-16"
@@ -92,6 +91,10 @@ export default function Activity({
             height={128}
           />
         )}
+        <article className="text-left xs:text-right">
+          <h1 className="max-w-full truncate text-lg">{activity?.name}</h1>
+          <h2 className="text-sm text-muted-foreground">{elapsedTime}</h2>
+        </article>
       </section>
     )
   );
